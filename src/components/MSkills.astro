@@ -30,13 +30,22 @@ const skills = [
 ---
 
 <div class="skills">
-  {skills.map((skill) => <MSkillItem name={skill.name} icon={skill.icon} />)}
+  <h2 class="skills__headline">Mis habilidades ⭐</h2>
+  <div class="skills__items">
+    {skills.map((skill) => <MSkillItem name={skill.name} icon={skill.icon} />)}
+  </div>
 </div>
 
 <style>
   @reference "tailwindcss";
 
   .skills {
-    @apply grid grid-cols-2 py-24 md:grid-cols-1 lg:grid-cols-2 gap-4;
+    @apply py-24;
+  }
+  .skills__items {
+    @apply grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4;
+  }
+  .skills__headline {
+    @apply text-2xl text-center md:text-5xl font-semibold text-gray-900 mb-5 leading-tight;
   }
 </style>
