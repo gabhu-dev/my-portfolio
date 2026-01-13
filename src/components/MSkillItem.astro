@@ -1,0 +1,20 @@
+---
+interface Props {
+  name: string;
+  icon: string;
+}
+
+const { name, icon } = Astro.props;
+---
+
+<div class="skill-item">
+  <span>{name}</span>
+</div>
+
+<style>
+  @reference "tailwindcss";
+
+  .skill-item {
+    @apply flex justify-between items-center border border-gray-200 p-4 rounded-lg;
+  }
+</style>
