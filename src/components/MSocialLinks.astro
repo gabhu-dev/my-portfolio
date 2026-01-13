@@ -1,0 +1,23 @@
+---
+import { Linkedin, Github, Codepen } from "@lucide/astro";
+---
+
+<div class="hero__socials">
+  <a href="#" class="social-icon">
+    <Linkedin />
+  </a>
+  <a href="#" class="social-icon">
+    <Github />
+  </a>
+  <a href="#" class="social-icon">
+    <Codepen />
+  </a>
+</div>
+
+<style>
+  @reference "tailwindcss";
+
+  .hero__socials {
+    @apply flex gap-8 justify-center;
+  }
+</style>

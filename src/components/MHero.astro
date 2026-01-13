@@ -1,17 +1,14 @@
 ---
 import MButton from "./MButton.astro";
-import { Linkedin, Github, Codepen } from "@lucide/astro";
+import MSocialLinks from "./MSocialLinks.astro";
+import Avatar from "../assets/images/avatar.jpg";
 ---
 
 <div class="hero">
   <div class="hero__content">
     <!-- Avatar -->
     <div class="avatar">
-      <img
-        src="https://i.pravatar.cc/300?u=gabhu"
-        alt="Gabhu"
-        class="avatar__img"
-      />
+      <img src={Avatar.src} alt="Gabhu" class="avatar__img" />
     </div>
 
     <div class="hero__text-info">
@@ -19,17 +16,7 @@ import { Linkedin, Github, Codepen } from "@lucide/astro";
       <p class="hero__role">UI Frontend developer</p>
 
       <!-- Social Icons -->
-      <div class="hero__socials">
-        <a href="#" class="social-icon">
-          <Linkedin />
-        </a>
-        <a href="#" class="social-icon">
-          <Github />
-        </a>
-        <a href="#" class="social-icon">
-          <Codepen />
-        </a>
-      </div>
+      <MSocialLinks />
     </div>
 
     <h1 class="hero__headline">
@@ -60,7 +47,7 @@ import { Linkedin, Github, Codepen } from "@lucide/astro";
   }
 
   .avatar {
-    @apply w-32 h-32 rounded-full p-2 bg-pink-100 flex items-center justify-center mb-6;
+    @apply w-30 h-30 rounded-full bg-pink-100 flex items-center justify-center mb-6;
   }
 
   .avatar__img {
@@ -75,16 +62,12 @@ import { Linkedin, Github, Codepen } from "@lucide/astro";
     @apply text-lg text-gray-900 mb-4;
   }
 
-  .hero__socials {
-    @apply flex gap-8 mb-8 justify-center;
-  }
-
   .social-icon {
     @apply text-gray-900 hover:text-indigo-600 transition-colors;
   }
 
   .hero__headline {
-    @apply text-4xl md:text-5xl font-semibold text-gray-900 mb-5 leading-tight;
+    @apply text-4xl md:text-5xl font-semibold text-gray-900 mt-8 mb-5 leading-tight;
   }
 
   .hero__description {
