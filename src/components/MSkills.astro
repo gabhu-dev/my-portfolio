@@ -4,35 +4,74 @@ import MSkillItem from "./MSkillItem.astro";
 const skills = [
   {
     name: "HTML",
-    icon: "html",
+    code: "<h1></h1>",
+    color: "bg-red-100/60",
+  },
+  {
+    name: "Figma",
+    code: "Text",
+    color: "bg-purple-100/60",
+  },
+  {
+    name: "Javascript",
+    code: "const a = b;",
+    color: "bg-yellow-100/60",
+  },
+  {
+    name: "Pixel Perfect",
+    code: "Text",
+    color: "bg-orange-100/60",
   },
   {
     name: "CSS",
-    icon: "css",
+    code: "margin: auto;",
+    color: "bg-blue-100/60",
   },
   {
-    name: "JavaScript",
-    icon: "js",
+    name: "Ant Design",
+    code: "<a-button />",
+    color: "bg-indigo-100/60",
   },
   {
-    name: "React",
-    icon: "react",
+    name: "Vue 3",
+    code: "<Button />",
+    color: "bg-green-100/60",
   },
   {
-    name: "Next.js",
-    icon: "nextjs",
+    name: "Sass",
+    code: "@include mrg",
+    color: "bg-pink-100/60",
   },
   {
-    name: "Tailwind CSS",
-    icon: "tailwindcss",
+    name: "TypeScript",
+    code: 'type a = "a";',
+    color: "bg-orange-100/80",
+  },
+  {
+    name: "Tailwind",
+    code: "hover:px-0",
+    color: "bg-cyan-100/60",
   },
 ];
 ---
 
 <div class="skills">
-  <h2 class="skills__headline">Mis habilidades ⭐</h2>
-  <div class="skills__items">
-    {skills.map((skill) => <MSkillItem name={skill.name} icon={skill.icon} />)}
+  <div class="skills__container">
+    <h2 class="skills__headline">Mis habilidades ⭐</h2>
+    <p class="skills__text">
+      He adquirido estas habilidades gracias a mi pasión por aprender.
+    </p>
+    <div class="skills__items">
+      {
+        skills.map((skill) => (
+          <MSkillItem
+            name={skill.name}
+            code={skill.code}
+            className={skill.color}
+          />
+        ))
+      }
+    </div>
   </div>
 </div>
 
@@ -40,12 +79,18 @@ const skills = [
   @reference "tailwindcss";
 
   .skills {
-    @apply py-24;
+    @apply py-24 bg-white;
+  }
+  .skills__container {
+    @apply max-w-5xl mx-auto px-6;
   }
   .skills__items {
-    @apply grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4;
+    @apply mt-14 grid grid-cols-1 md:grid-cols-2 gap-4;
   }
   .skills__headline {
-    @apply text-2xl text-center md:text-5xl font-semibold text-gray-900 mb-5 leading-tight;
+    @apply text-3xl text-center font-semibold text-gray-900 mb-5 leading-tight;
+  }
+  .skills__text {
+    @apply text-center text-gray-600 text-lg;
   }
 </style>

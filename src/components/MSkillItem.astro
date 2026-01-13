@@ -1,20 +1,28 @@
 ---
 interface Props {
   name: string;
-  icon: string;
+  code: string;
+  className?: string;
 }
 
-const { name, icon } = Astro.props;
+const { name, code, className } = Astro.props;
 ---
 
-<div class="skill-item">
-  <span>{name}</span>
+<div class:list={["skill-item", className]}>
+  <span class="skill-item__name">{name}</span>
+  <span class="skill-item__code">{code}</span>
 </div>
 
 <style>
   @reference "tailwindcss";
 
   .skill-item {
-    @apply flex justify-between items-center border border-gray-200 p-4 rounded-lg;
+    @apply flex justify-between items-center p-4 rounded-lg;
+  }
+  .skill-item__name {
+    @apply font-semibold text-gray-900;
+  }
+  .skill-item__code {
+    @apply text-sm text-gray-950;
   }
 </style>
