@@ -1,0 +1,23 @@
+---
+interface Props {
+  ghost?: boolean;
+}
+
+const { ghost } = Astro.props;
+---
+
+<button class:list={["mbutton", { "mbutton--ghost": ghost }]}>
+  <slot />
+</button>
+
+<style>
+  @reference "tailwindcss";
+
+  .mbutton {
+    @apply px-8 py-3 bg-gray-950 text-white rounded font-medium hover:bg-indigo-600 cursor-pointer transition-all;
+  }
+
+  .mbutton--ghost {
+    @apply bg-white border border-gray-900 text-gray-900 hover:bg-gray-50 transition-all;
+  }
+</style>
