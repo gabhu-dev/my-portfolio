@@ -11,7 +11,10 @@
   "dependencies": {
     "@lucide/astro": "^0.562.0",
     "@tailwindcss/vite": "^4.1.18",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/slim": "^3.9.1",
     "astro": "^5.16.9",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "tsparticles": "^3.9.1"
   }
 }
