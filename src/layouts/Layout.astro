@@ -2,7 +2,7 @@
 import "../styles/global.css";
 ---
 
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -98,12 +98,15 @@ import "../styles/global.css";
 
 <style is:global>
   @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   html,
   body {
     margin: 0;
     width: 100%;
     height: 100%;
+    color: #000;
+    @apply dark:text-white dark:bg-gray-800;
   }
 
   #tsparticles {

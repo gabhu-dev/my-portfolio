@@ -39,7 +39,7 @@ import Avatar from "../assets/images/avatar.jpg";
   @reference "tailwindcss";
 
   .hero {
-    @apply relative overflow-hidden min-h-[80vh] flex items-center justify-center bg-white;
+    @apply relative overflow-hidden min-h-[80vh] flex items-center justify-center;
   }
 
   .hero__content {
@@ -55,23 +55,18 @@ import Avatar from "../assets/images/avatar.jpg";
   }
 
   .hero__greeting {
-    @apply text-xl font-semibold text-gray-900 mb-3;
+    @apply text-xl font-semibold text-gray-900 mb-3 dark:text-white;
   }
 
   .hero__role {
     @apply text-lg text-gray-900 mb-4;
   }
-
-  .social-icon {
-    @apply text-gray-900 hover:text-indigo-600 transition-colors;
-  }
-
   .hero__headline {
-    @apply text-4xl md:text-5xl font-semibold text-gray-900 mt-8 mb-5 leading-tight;
+    @apply text-4xl md:text-5xl font-semibold text-gray-900 mt-8 mb-5 leading-tight dark:text-white;
   }
 
   .hero__description {
-    @apply text-lg text-gray-600 mb-10 max-w-2xl leading-relaxed;
+    @apply text-lg text-gray-600 mb-10 max-w-2xl leading-relaxed dark:text-white;
   }
 
   .hero__actions {

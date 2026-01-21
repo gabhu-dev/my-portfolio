@@ -1,8 +1,10 @@
 ---
 import MNavItem from "./MNavItem.astro";
+import { MoonIcon } from "@lucide/astro";
 ---
 
 <nav>
+  <MoonIcon class="size-5" />
   <MNavItem href="/"> Sobre mí </MNavItem>
   <MNavItem href="#contact"> Contactame </MNavItem>
 </nav>
@@ -11,6 +13,6 @@ import MNavItem from "./MNavItem.astro";
   @reference "tailwindcss";
 
   nav {
-    @apply flex justify-end gap-5 py-8 px-24;
+    @apply flex justify-end gap-5 py-8 px-24 items-center;
   }
 </style>
