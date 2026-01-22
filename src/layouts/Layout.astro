@@ -2,13 +2,30 @@
 import "../styles/global.css";
 ---
 
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
+
+    <!-- Initialize theme before page renders to prevent flash -->
+    <script is:inline>
+      function getInitialTheme() {
+        // 1. Check if user has a saved preference
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) return savedTheme;
+
+        // 2. Fall back to system preference
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      }
+
+      // Apply theme immediately
+      document.documentElement.setAttribute("data-theme", getInitialTheme());
+    </script>
   </head>
   <body>
     <div id="tsparticles"></div>
