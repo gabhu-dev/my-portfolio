@@ -18,9 +18,10 @@ const isActive =
 
 <style>
   @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   .nav-item {
-    @apply text-gray-950 font-medium text-base px-1 cursor-pointer transition-colors hover:text-indigo-400;
+    @apply text-gray-950 font-medium text-base px-1 cursor-pointer transition-colors hover:text-indigo-400 dark:text-white;
   }
 
   .nav-item--active {

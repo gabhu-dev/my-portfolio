@@ -11,14 +11,15 @@ import MSocialLinks from "./MSocialLinks.astro";
     >
   </p>
 
-  <MSocialLinks />
+  <MSocialLinks fromFooter />
 </footer>
 
 <style>
   @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   .mfooter {
-    @apply bg-indigo-50 py-24 text-center;
+    @apply bg-indigo-50 py-24 text-center dark:bg-indigo-100;
   }
 
   .mfooter__headline {
@@ -27,5 +28,9 @@ import MSocialLinks from "./MSocialLinks.astro";
 
   .mfooter__text {
     @apply text-lg text-gray-900 mb-5;
+  }
+
+  .mfooter a {
+    @apply dark:text-gray-900 dark:hover:text-indigo-600;
   }
 </style>

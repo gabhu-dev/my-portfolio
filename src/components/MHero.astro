@@ -37,6 +37,7 @@ import Avatar from "../assets/images/avatar.jpg";
 
 <style>
   @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   .hero {
     @apply relative overflow-hidden min-h-[80vh] flex items-center justify-center;
@@ -59,7 +60,7 @@ import Avatar from "../assets/images/avatar.jpg";
   }
 
   .hero__role {
-    @apply text-lg text-gray-900 mb-4;
+    @apply text-lg text-gray-900 mb-4 dark:text-white;
   }
   .hero__headline {
     @apply text-4xl md:text-5xl font-semibold text-gray-900 mt-8 mb-5 leading-tight dark:text-white;

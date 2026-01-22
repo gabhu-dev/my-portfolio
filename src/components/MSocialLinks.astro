@@ -1,8 +1,14 @@
 ---
 import { Linkedin, Github, Codepen, Dribbble } from "@lucide/astro";
+
+interface Props {
+  fromFooter?: boolean;
+}
+
+const { fromFooter } = Astro.props;
 ---
 
-<div class="hero__socials">
+<div class:list={["hero__socials", { "hero__socials--footer": fromFooter }]}>
   <a href="#" class="social-icon">
     <Linkedin />
   </a>
@@ -19,8 +25,13 @@ import { Linkedin, Github, Codepen, Dribbble } from "@lucide/astro";
 
 <style>
   @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   .hero__socials {
     @apply flex gap-8 justify-center;
+  }
+
+  .hero__socials--footer .social-icon {
+    @apply dark:text-gray-900 dark:hover:text-indigo-600;
   }
 </style>
