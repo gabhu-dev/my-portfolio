@@ -4,6 +4,18 @@ import MSocialLinks from "./MSocialLinks.astro";
 import Avatar from "../assets/images/avatar.jpg";
 ---
 
+<script>
+  const buttonDownloadCV = document.getElementById("button-download-cv");
+
+  function downloadCV() {
+    const link = document.createElement("a");
+    link.href = "/files/CV.pdf";
+    link.download = "CV-Gabriela.pdf";
+    link.click();
+  }
+  buttonDownloadCV?.addEventListener("click", downloadCV);
+</script>
+
 <div class="hero">
   <div class="hero__content">
     <!-- Avatar -->
@@ -29,7 +41,7 @@ import Avatar from "../assets/images/avatar.jpg";
     </p>
 
     <div class="hero__actions">
-      <MButton ghost>Descarga mi CV</MButton>
+      <MButton ghost id="button-download-cv">Descarga mi CV</MButton>
       <MButton>Contáctame</MButton>
     </div>
   </div>
