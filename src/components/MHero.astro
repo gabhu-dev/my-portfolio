@@ -6,6 +6,7 @@ import Avatar from "../assets/images/avatar.jpg";
 
 <script>
   const buttonDownloadCV = document.getElementById("button-download-cv");
+  const buttonContact = document.getElementById("button-contact");
 
   function downloadCV() {
     const link = document.createElement("a");
@@ -13,7 +14,14 @@ import Avatar from "../assets/images/avatar.jpg";
     link.download = "CV-Gabriela.pdf";
     link.click();
   }
+
+  function goContact() {
+    const contactSection = document.getElementById("contact");
+    contactSection?.scrollIntoView({ behavior: "smooth" });
+  }
+
   buttonDownloadCV?.addEventListener("click", downloadCV);
+  buttonContact?.addEventListener("click", goContact);
 </script>
 
 <div class="hero">
@@ -42,7 +50,7 @@ import Avatar from "../assets/images/avatar.jpg";
 
     <div class="hero__actions">
       <MButton ghost id="button-download-cv">Descarga mi CV</MButton>
-      <MButton>Contáctame</MButton>
+      <MButton id="button-contact">Contáctame</MButton>
     </div>
   </div>
 </div>
