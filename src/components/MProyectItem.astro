@@ -1,0 +1,25 @@
+---
+import ProyectImage from "../assets/images/proyect.png";
+import { ExpandIcon } from "@lucide/astro";
+---
+
+<div class="proyect__item">
+  <img src={ProyectImage.src} alt="Imagen de proyecto" />
+  <div class="proyect__item-title">
+    <h3>Proyect Number 1</h3>
+    <button>
+      <ExpandIcon size={20} />
+    </button>
+  </div>
+</div>
+
+<style>
+  @reference "tailwindcss";
+
+  .proyect__item {
+    @apply w-full;
+  }
+  .proyect__item-title {
+    @apply p-5 text-xl font-semibold flex justify-between;
+  }
+</style>

@@ -1,0 +1,12 @@
+<div class="section">
+  <slot />
+</div>
+
+<style>
+  @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+  .section {
+    @apply py-24;
+  }
+</style>

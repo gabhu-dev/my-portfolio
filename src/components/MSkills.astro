@@ -1,5 +1,7 @@
 ---
 import MSkillItem from "./MSkillItem.astro";
+import MSectionHead from "./MSectionHead.astro";
+import MSection from "./MSection.astro";
 
 const skills = [
   {
@@ -55,12 +57,15 @@ const skills = [
 ];
 ---
 
-<div class="skills">
+<MSection class="skills">
   <div class="skills__container">
-    <h2 class="skills__headline">Mis habilidades ⭐</h2>
-    <p class="skills__text">
-      He adquirido estas habilidades gracias a mi pasión por aprender.
-    </p>
+    <MSectionHead>
+      <span slot="title">Mis habilidades ⭐</span>
+      <span slot="text">
+        He adquirido estas habilidades gracias a mi pasión por aprender.
+      </span>
+    </MSectionHead>
+
     <div class="skills__items">
       {
         skills.map((skill) => (
@@ -73,25 +78,16 @@ const skills = [
       }
     </div>
   </div>
-</div>
+</MSection>
 
 <style>
   @reference "tailwindcss";
   @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-  .skills {
-    @apply py-24;
-  }
   .skills__container {
     @apply max-w-5xl mx-auto px-6;
   }
   .skills__items {
     @apply mt-14 grid grid-cols-1 md:grid-cols-2 gap-4;
-  }
-  .skills__headline {
-    @apply text-3xl text-center font-semibold text-gray-900 mb-5 leading-tight dark:text-white;
-  }
-  .skills__text {
-    @apply text-center text-gray-600 text-lg dark:text-white;
   }
 </style>

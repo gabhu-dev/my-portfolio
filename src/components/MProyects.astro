@@ -1,0 +1,27 @@
+---
+import MSectionHead from "./MSectionHead.astro";
+import MSection from "./MSection.astro";
+import MProyectItem from "./MProyectItem.astro";
+---
+
+<MSection>
+  <MSectionHead>
+    <span slot="title">Mis trabajos 👩‍💻</span>
+    <span slot="text">
+      He adquirido estas habilidades gracias a mi pasión por aprender.
+    </span>
+  </MSectionHead>
+  <div class="proyects__container">
+    <MProyectItem />
+    <MProyectItem />
+    <MProyectItem />
+  </div>
+</MSection>
+
+<style>
+  @reference "tailwindcss";
+
+  .proyects__container {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-14;
+  }
+</style>
