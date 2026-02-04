@@ -1,17 +1,22 @@
 ---
-import ProyectImage from "../assets/images/proyect.png";
-import { ExpandIcon } from "@lucide/astro";
+import { ArrowRightIcon } from "@lucide/astro";
+
+interface Props {
+  slug: string;
+  title: string;
+  image: ImageMetadata;
+}
+
+const { slug, title, image } = Astro.props;
 ---
 
-<div class="proyect__item">
-  <img src={ProyectImage.src} alt="Imagen de proyecto" />
+<a href={`/proyects/${slug}`} class="proyect__item">
+  <img src={image.src} alt={title} />
   <div class="proyect__item-title">
-    <h3>Proyect Number 1</h3>
-    <button>
-      <ExpandIcon size={20} />
-    </button>
+    <h3>{title}</h3>
+    <ArrowRightIcon size={20} />
   </div>
-</div>
+</a>
 
 <style>
   @reference "tailwindcss";

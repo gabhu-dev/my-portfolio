@@ -2,6 +2,7 @@
 import MSectionHead from "./MSectionHead.astro";
 import MSection from "./MSection.astro";
 import MProyectItem from "./MProyectItem.astro";
+import { projects } from "../@constants/proyects";
 ---
 
 <MSection>
@@ -12,9 +13,15 @@ import MProyectItem from "./MProyectItem.astro";
     </span>
   </MSectionHead>
   <div class="proyects__container">
-    <MProyectItem />
-    <MProyectItem />
-    <MProyectItem />
+    {
+      projects.map((project) => (
+        <MProyectItem
+          slug={project.slug}
+          title={project.title}
+          image={project.image}
+        />
+      ))
+    }
   </div>
 </MSection>
 

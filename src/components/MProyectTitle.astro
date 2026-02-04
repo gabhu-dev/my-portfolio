@@ -1,0 +1,25 @@
+<div class="proyect-title">
+  <h1>
+    PROYECTO:
+    <span class="proyect-title__name">
+      <slot name="title" />
+    </span>
+  </h1>
+</div>
+
+<style>
+  @reference "tailwindcss";
+
+  .proyect-title h1 {
+    @apply text-3xl font-extrabold flex flex-wrap items-center gap-2;
+  }
+
+  .proyect-title__name {
+    @apply relative;
+  }
+
+  .proyect-title__name::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 w-full h-1.5 bg-indigo-600 rounded-full;
+  }
+</style>
