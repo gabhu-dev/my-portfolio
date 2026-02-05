@@ -22,7 +22,10 @@ const { slug, title, image } = Astro.props;
   @reference "tailwindcss";
 
   .proyect__item {
-    @apply w-full;
+    @apply w-full shadow-sm rounded-lg overflow-hidden;
+  }
+  .proyect__item img {
+    @apply border-b border-gray-100;
   }
   .proyect__item-title {
     @apply p-5 text-xl font-semibold flex justify-between;

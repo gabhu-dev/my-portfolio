@@ -4,11 +4,11 @@ import MNavbar from "../../components/MNavbar.astro";
 import MFooter from "../../components/MFooter.astro";
 import MProyectTitle from "../../components/MProyectTitle.astro";
 
-import { PROYECTS_DATA } from "../../@constants/proyects";
+import { PROJECTS_DATA } from "../../@constants/proyects";
 import { ExternalLink } from "@lucide/astro";
 
 export async function getStaticPaths() {
-  return PROYECTS_DATA.map((project) => ({
+  return PROJECTS_DATA.map((project) => ({
     params: { proyect: project.slug },
     props: { project },
   }));
@@ -22,7 +22,7 @@ const { project } = Astro.props;
   <main class="project-detail">
     <div class="project-detail__header">
       <MProyectTitle>
-        <span slot="title">{project.title}</span>
+        <span slot="title">{project.titlePage}</span>
       </MProyectTitle>
       <div class="project-detail__link-container">
         <a href={project.link} target="_blank" class="project-detail__link">
@@ -46,6 +46,7 @@ const { project } = Astro.props;
         {
           project.tags.map((tag) => (
             <div class="tag">
+              <tag.icon size={16} />
               <span class="tag__label">{tag.label}</span>
             </div>
           ))
@@ -54,14 +55,24 @@ const { project } = Astro.props;
     </section>
 
     {
-      project.responsiveImage.responsive && (
+      project.responsiveImage.link && (
         <section class="project-detail__responsive">
-          <img
-            class="project-detail__responsive-image"
-            src={project.responsiveImage.link.src}
-            alt="Responsive view"
-          />
-          <p class="responsive-caption">Responsive View Mobile</p>
+          {project.responsiveImage.responsive ? (
+            <>
+              <img
+                class="project-detail__responsive-image"
+                src={project.responsiveImage.link.src}
+                alt="Responsive view"
+              />
+              <p class="responsive-caption">Responsive View Mobile</p>
+            </>
+          ) : (
+            <img
+              class="project-detail__secondary-image"
+              src={project.responsiveImage.link.src}
+              alt=""
+            />
+          )}
         </section>
       )
     }
@@ -126,5 +137,9 @@ const { project } = Astro.props;
 
   .responsive-caption {
     @apply text-sm text-gray-500;
+  }
+
+  .project-detail__secondary-image {
+    @apply w-full h-auto;
   }
 </style>
