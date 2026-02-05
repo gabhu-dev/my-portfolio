@@ -1,4 +1,4 @@
-import ProyectImage from "../assets/images/proyect.png";
+import ProyectFirst from "../assets/images/proyect-landing.png";
 // Importa otros iconos si es necesario, por ejemplo de @lucide/astro
 // import { Code, Globe } from "@lucide/astro";
 
@@ -20,19 +20,19 @@ export interface Project {
   };
 }
 
-export const projects: Project[] = [
+export const PROYECTS_DATA: Project[] = [
   {
     slug: "landing-dennky",
     title: "LANDING DENNKY",
     link: "https://dennky.com",
-    image: ProyectImage,
+    image: ProyectFirst,
     description: "Laboratorio de fluidos dieléctricos y lubricantes. Somos una empresa que realiza servicios de muestreo, análisis de fluidos dieléctricos y de aceites lubricantes.",
     tags: [
       { icon: "Code", label: "Astro" },
       { icon: "Layout", label: "Tailwind" },
     ],
     responsiveImage: {
-      link: ProyectImage,
+      link: ProyectFirst,
       responsive: true,
     },
   },
