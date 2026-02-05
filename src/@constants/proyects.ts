@@ -1,4 +1,5 @@
 import ProyectFirst from "../assets/images/proyect-landing.png";
+import ProyectFirstResponsive from "../assets/images/proyect-landing-responsive.png";
 // Importa otros iconos si es necesario, por ejemplo de @lucide/astro
 // import { Code, Globe } from "@lucide/astro";
 
@@ -32,7 +33,7 @@ export const PROYECTS_DATA: Project[] = [
       { icon: "Layout", label: "Tailwind" },
     ],
     responsiveImage: {
-      link: ProyectFirst,
+      link: ProyectFirstResponsive,
       responsive: true,
     },
   },
