@@ -2,14 +2,14 @@
 import Layout from "../../layouts/Layout.astro";
 import MNavbar from "../../components/MNavbar.astro";
 import MFooter from "../../components/MFooter.astro";
-import MProyectTitle from "../../components/MProyectTitle.astro";
+import MProjectTitle from "../../components/MProjectTitle.astro";
 
-import { PROJECTS_DATA } from "../../@constants/proyects";
+import { PROJECTS_DATA } from "../../@constants/projects";
 import { ExternalLink } from "@lucide/astro";
 
 export async function getStaticPaths() {
   return PROJECTS_DATA.map((project) => ({
-    params: { proyect: project.slug },
+    params: { project: project.slug },
     props: { project },
   }));
 }
@@ -21,9 +21,9 @@ const { project } = Astro.props;
   <MNavbar />
   <main class="project-detail">
     <div class="project-detail__header">
-      <MProyectTitle>
+      <MProjectTitle>
         <span slot="title">{project.titlePage}</span>
-      </MProyectTitle>
+      </MProjectTitle>
       <div class="project-detail__link-container">
         <a href={project.link} target="_blank" class="project-detail__link">
           Visitar sitio web

@@ -1,7 +1,7 @@
-<div class="proyect-title">
+<div class="project-title">
   <h1>
     PROYECTO:
-    <span class="proyect-title__name">
+    <span class="project-title__name">
       <slot name="title" />
     </span>
   </h1>
@@ -10,15 +10,15 @@
 <style>
   @reference "tailwindcss";
 
-  .proyect-title h1 {
+  .project-title h1 {
     @apply text-3xl font-semibold;
   }
 
-  .proyect-title__name {
+  .project-title__name {
     @apply relative;
   }
 
-  .proyect-title__name::after {
+  .project-title__name::after {
     content: "";
     @apply absolute -bottom-1 left-0 w-full h-1 bg-indigo-500 rounded-full;
   }

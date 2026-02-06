@@ -1,8 +1,8 @@
 ---
 import MSectionHead from "./MSectionHead.astro";
 import MSection from "./MSection.astro";
-import MProyectItem from "./MProyectItem.astro";
-import { PROJECTS_DATA } from "../@constants/proyects";
+import MProjectItem from "./MProjectItem.astro";
+import { PROJECTS_DATA } from "../@constants/projects";
 ---
 
 <MSection>
@@ -12,10 +12,10 @@ import { PROJECTS_DATA } from "../@constants/proyects";
       He adquirido estas habilidades gracias a mi pasión por aprender.
     </span>
   </MSectionHead>
-  <div class="proyects__container">
+  <div class="projects__container">
     {
       PROJECTS_DATA.map((project) => (
-        <MProyectItem
+        <MProjectItem
           slug={project.slug}
           title={project.title}
           image={project.image}
@@ -28,7 +28,7 @@ import { PROJECTS_DATA } from "../@constants/proyects";
 <style>
   @reference "tailwindcss";
 
-  .proyects__container {
+  .projects__container {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-14;
   }
 </style>

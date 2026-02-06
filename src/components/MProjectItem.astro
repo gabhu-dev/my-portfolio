@@ -10,9 +10,9 @@ interface Props {
 const { slug, title, image } = Astro.props;
 ---
 
-<a href={`/proyects/${slug}`} class="proyect__item">
+<a href={`/projects/${slug}`} class="project__item">
   <img src={image.src} alt={title} />
-  <div class="proyect__item-title">
+  <div class="project__item-title">
     <h3>{title}</h3>
     <ArrowRightIcon size={20} />
   </div>
@@ -21,13 +21,13 @@ const { slug, title, image } = Astro.props;
 <style>
   @reference "tailwindcss";
 
-  .proyect__item {
+  .project__item {
     @apply w-full shadow-sm rounded-lg overflow-hidden;
   }
-  .proyect__item img {
-    @apply border-b border-gray-100;
+  .project__item img {
+    @apply border-b border-gray-100 h-[233px] object-contain;
   }
-  .proyect__item-title {
+  .project__item-title {
     @apply p-5 text-xl font-semibold flex justify-between;
   }
 </style>
