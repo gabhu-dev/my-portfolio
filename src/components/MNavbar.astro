@@ -1,6 +1,6 @@
 ---
 import MNavItem from "./MNavItem.astro";
-import { MenuIcon } from "@lucide/astro";
+import { MenuIcon, XIcon } from "@lucide/astro";
 import Avatar from "../assets/images/avatar.jpg";
 import MNavbarDropdown from "./MNavbarDropdown.astro";
 import MToogleTheme from "./MToogleTheme.astro";
@@ -16,11 +16,13 @@ import MToogleTheme from "./MToogleTheme.astro";
     )
   }
   <div style="flex:1"></div>
-  <MToogleTheme class="hidden lg:block" />
+  <MToogleTheme class="hidden lg:block transition-all" />
 
-  <button id="menu-toggle" aria-label="Abrir menú" class="lg:hidden">
-    <MenuIcon class="size-8" />
+  <button id="menu-toggle" aria-label="Toggle menú" class="lg:hidden z-110">
+    <MenuIcon id="icon-menu" class="size-8 block" />
+    <XIcon id="icon-close" class="size-8 hidden" />
   </button>
+
   <div class="menu-items">
     <MNavItem href="/"> Sobre mí </MNavItem>
     <MNavItem href="#projects"> Mis trabajos </MNavItem>
@@ -29,12 +31,41 @@ import MToogleTheme from "./MToogleTheme.astro";
   <MNavbarDropdown />
 </nav>
 
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const iconMenu = document.getElementById("icon-menu");
+  const iconClose = document.getElementById("icon-close");
+  const dropdown = document.querySelector(".dropdown");
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = dropdown?.classList.toggle("dropdown--open");
+
+    // Toggle icons
+    iconMenu?.classList.toggle("hidden", isOpen);
+    iconClose?.classList.toggle("hidden", !isOpen);
+
+    // Prevent scrolling when menu is open
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  });
+
+  // Close menu when clicking on a link
+  const dropdownLinks = document.querySelectorAll(".dropdown a");
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      dropdown?.classList.remove("dropdown--open");
+      iconMenu?.classList.remove("hidden");
+      iconClose?.classList.add("hidden");
+      document.body.style.overflow = "";
+    });
+  });
+</script>
+
 <style>
   @reference "tailwindcss";
   @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   nav {
-    @apply flex justify-end gap-5 py-8 px-6 lg:px-24 items-center;
+    @apply flex justify-end gap-5 py-8 px-6 lg:px-24 items-center sticky top-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md z-100;
   }
 
   .menu-items {

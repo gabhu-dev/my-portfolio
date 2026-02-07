@@ -6,14 +6,19 @@ import MToogleTheme from "./MToogleTheme.astro";
 ---
 
 <div class="dropdown">
-  <MToogleTheme />
-  <MNavItem href="/"> Sobre mí </MNavItem>
-  <MNavItem href="#projects"> Mis trabajos </MNavItem>
-  <MNavItem href="#contact"> Contáctame </MNavItem>
-  <div class="dropdown__actions">
-    <MButton ghost id="button-download-cv" class="mb-24">Descarga mi CV</MButton
-    >
-    <MSocialLinks />
+  <div class="dropdown__content">
+    <MToogleTheme class="mb-12" />
+    <div class="dropdown__links">
+      <MNavItem href="/"> Sobre mí </MNavItem>
+      <MNavItem href="/#projects"> Mis trabajos </MNavItem>
+      <MNavItem href="/#contact"> Contáctame </MNavItem>
+    </div>
+    <div class="dropdown__actions">
+      <MButton ghost id="button-download-cv" class="mb-8"
+        >Descarga mi CV</MButton
+      >
+      <MSocialLinks />
+    </div>
   </div>
 </div>
 
@@ -22,10 +27,32 @@ import MToogleTheme from "./MToogleTheme.astro";
   @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   .dropdown {
-    @apply flex flex-col gap-10 items-center absolute top-24 right-0 left-0 bottom-0 bg-white z-100 dark:bg-gray-800;
+    @apply fixed inset-0 bg-white dark:bg-gray-800 z-90 lg:hidden;
+    transition:
+      clip-path 0.5s ease-in-out,
+      opacity 0.3s ease-in-out;
+    clip-path: circle(0% at 100% 0%);
+    opacity: 0;
+    pointer-events: none;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .dropdown--open {
+    clip-path: circle(150% at 100% 0%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .dropdown__content {
+    @apply flex flex-col items-center justify-center h-full w-full p-8;
+  }
+
+  .dropdown__links {
+    @apply flex flex-col gap-8 items-center mb-12;
   }
 
   .dropdown__actions {
-    @apply absolute bottom-5;
+    @apply flex flex-col items-center gap-8;
   }
 </style>
