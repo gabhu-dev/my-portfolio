@@ -1,9 +1,19 @@
 ---
 import MNavItem from "./MNavItem.astro";
 import { MoonIcon, SunIcon } from "@lucide/astro";
+import Avatar from "../assets/images/avatar.jpg";
 ---
 
 <nav>
+  {
+    Astro.url.pathname !== "/" && (
+      <div class="avatar">
+        <img src={Avatar.src} alt="Gabhu" class="avatar__img" />
+        <p>Gabhu-dev</p>
+      </div>
+    )
+  }
+  <div style="flex:1"></div>
   <button id="theme-toggle" aria-label="Cambiar tema">
     <MoonIcon id="moon-icon" class="size-5" />
     <SunIcon id="sun-icon" class="size-5 hidden" />
@@ -70,6 +80,7 @@ import { MoonIcon, SunIcon } from "@lucide/astro";
 
 <style>
   @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   nav {
     @apply flex justify-end gap-5 py-8 px-24 items-center;
@@ -77,5 +88,17 @@ import { MoonIcon, SunIcon } from "@lucide/astro";
 
   #theme-toggle {
     @apply cursor-pointer transition-transform hover:text-indigo-500 hover:scale-110 bg-transparent border-0 p-0;
+  }
+
+  .avatar {
+    @apply flex items-center gap-2;
+  }
+
+  .avatar__img {
+    @apply w-10 h-10 rounded-full object-cover;
+  }
+
+  .avatar p {
+    @apply text-gray-900 font-semibold dark:text-white;
   }
 </style>
