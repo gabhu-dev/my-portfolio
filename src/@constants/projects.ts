@@ -7,7 +7,7 @@ import ProjectTickerResponsive from "../assets/images/proyect-ticker-responsive.
 import ProjectDennky from "../assets/images/proyect-dennky.png";
 import ProjectDennkyDuval from "../assets/images/proyect-dennky-2.png";
 
-import { FigmaIcon, PencilIcon } from "@lucide/astro";
+import { FigmaIcon, PencilIcon, CodeIcon } from "@lucide/astro";
 
 export interface Tag {
   icon: any; // O string si prefieres nombres de iconos
@@ -35,10 +35,16 @@ export const PROJECTS_DATA: Project[] = [
     titlePage: "TICKER WEB APP",
     link: "https://dennky.com",
     image: ProjectTicker,
-    description: "Laboratorio de fluidos dieléctricos y lubricantes. Somos una empresa que realiza servicios de muestreo, análisis de fluidos dieléctricos y de aceites lubricantes.",
+    description: "Ticker es un <span class='font-semibold'>SAAS web omnicanal</span> diseñada para facilitar la comunicación entre empresas y clientes a través de múltiples canales en un solo lugar 🌐.<br><br>Durante mi participación en el proyecto:<br><br>• ✨ Diseñé y prototipé nuevas vistas, aportando a la identidad visual y a la experiencia del usuario.<br>• 🤝 Colaboré con equipos multidisciplinarios para optimizar la interacción y lograr una experiencia más fluida.<br>• 💬 Implementé funcionalidades que permiten conversaciones en tiempo real entre usuarios y clientes.<br>• 🗂️ Transformé la aplicación en una experiencia adaptable y moderna, integrando principios de accesibilidad y diseño visual.<br><br>Ticker se consolidó como una solución práctica y atractiva, enfocada en mejorar la comunicación y la experiencia del usuario en entornos digitales 🚀.",
     tags: [
+      { icon: CodeIcon, label: "Vue 2" },
+      { icon: CodeIcon, label: "JS" },
+      { icon: CodeIcon, label: "Ant Design Vue" },
+      { icon: CodeIcon, label: "Socket.io" },
+      { icon: CodeIcon, label: "Axios" },
+      { icon: PencilIcon, label: "Sass" },
+      { icon: PencilIcon, label: "Responsive Design" },
       { icon: FigmaIcon, label: "Figma" },
-      { icon: PencilIcon, label: "Tailwind" },
     ],
     responsiveImage: {
       link: ProjectTickerResponsive,

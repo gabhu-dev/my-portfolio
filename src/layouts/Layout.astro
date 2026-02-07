@@ -8,7 +8,7 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>Portafolio gabhu-dev</title>
 
     <!-- Initialize theme before page renders to prevent flash -->
     <script is:inline>
@@ -114,8 +114,9 @@ import "../styles/global.css";
       };
 
       const observer = new IntersectionObserver((entries) => {
+        const hashes = ["#contact", "#projects"];
         entries.forEach((entry) => {
-          if (!entry.isIntersecting && window.location.hash === "#contact") {
+          if (!entry.isIntersecting && hashes.includes(window.location.hash)) {
             history.replaceState(
               null,
               "",
@@ -126,9 +127,9 @@ import "../styles/global.css";
       }, observerOptions);
 
       const contactSection = document.getElementById("contact");
-      if (contactSection) {
-        observer.observe(contactSection);
-      }
+      const projectsSection = document.getElementById("projects");
+      if (contactSection) observer.observe(contactSection);
+      if (projectsSection) observer.observe(projectsSection);
     </script>
   </body>
 </html>

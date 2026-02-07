@@ -14,7 +14,7 @@ const { slug, title, image } = Astro.props;
   <img src={image.src} alt={title} />
   <div class="project__item-title">
     <h3>{title}</h3>
-    <ArrowRightIcon size={20} />
+    <ArrowRightIcon size={20} class="project__item-icon" />
   </div>
 </a>
 
@@ -28,6 +28,9 @@ const { slug, title, image } = Astro.props;
     @apply border-b border-gray-100 h-[233px] object-contain;
   }
   .project__item-title {
-    @apply p-5 text-xl font-semibold flex justify-between;
+    @apply p-5 text-xl font-semibold flex justify-between items-center;
+  }
+  .project__item:hover .project__item-icon {
+    @apply size-6 transition-all;
   }
 </style>

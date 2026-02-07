@@ -40,7 +40,7 @@ const { project } = Astro.props;
 
     <section class="project-detail__info">
       <h3>Sobre el proyecto</h3>
-      <p>{project.description}</p>
+      <p set:html={project.description} />
 
       <div class="project-detail__tags">
         {
@@ -124,7 +124,7 @@ const { project } = Astro.props;
   }
 
   .tag {
-    @apply flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm font-medium text-gray-700;
+    @apply cursor-pointer transition-all duration-300 flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-indigo-500;
   }
 
   .project-detail__responsive {
