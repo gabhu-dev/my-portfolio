@@ -34,7 +34,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: "ticker",
     title: 'Ticker Web App',
     titlePage: "TICKER WEB APP",
-    link: "https://dennky.com",
+    link: "https://app.beexconv.com/login",
     image: ProjectTicker,
     description: "Ticker es un <span class='font-semibold'>SAAS web omnicanal</span> diseñada para facilitar la comunicación entre empresas y clientes a través de múltiples canales en un solo lugar 🌐.<br><br>Durante mi participación en el proyecto:<br><br>• ✨ Diseñé y prototipé nuevas vistas, aportando a la identidad visual y a la experiencia del usuario.<br>• 🤝 Colaboré con equipos multidisciplinarios para optimizar la interacción y lograr una experiencia más fluida.<br>• 💬 Implementé funcionalidades que permiten conversaciones en tiempo real entre usuarios y clientes.<br>• 🗂️ Transformé la aplicación en una experiencia adaptable y moderna, integrando principios de accesibilidad y diseño visual.<br><br>Ticker se consolidó como una solución práctica y atractiva, enfocada en mejorar la comunicación y la experiencia del usuario en entornos digitales 🚀.",
     tags: [
@@ -77,7 +77,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: "dennky",
     title: 'Dennky Web',
     titlePage: "DENNKY",
-    link: "https://dennky.com",
+    link: "https://app.dennky.com/",
     image: ProjectDennky,
     description: "<span class='font-semibold'>Dennky</span> es una plataforma web desarrollada para un laboratorio, enfocada en <span class='font-semibold'>gestionar reportes y servicios de análisis clínicos</span> de manera clara y accesible para los clientes.<br><br>Mi participación en el proyecto incluyó:<br><br>• 🎨 Diseño de interfaces adaptadas a los requerimientos del laboratorio y sus clientes, garantizando una experiencia visual moderna y funcional.<br>• 💻 Construcción del frontend, asegurando una navegación responsiva y una interacción fluida.<br>• 📊 Desarrollo de una <span class='font-semibold'>librería personalizada de gráficos de Duval</span>, que permite representar resultados de análisis de forma precisa y comprensible.<br>• ⚡ Implementación de actualizaciones en tiempo real, mejorando la comunicación y la eficiencia en la entrega de información.<br><br>El impacto logrado fue una plataforma que <span class='font-semibold'>optimiza la gestión de reportes, facilita la interpretación de resultados y mejora la interacción con los clientes</span>, consolidando la presencia digital del laboratorio 🚀.",
     tags: [

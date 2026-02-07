@@ -89,6 +89,7 @@ const { project } = Astro.props;
 
 <style>
   @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   .project-detail {
     @apply max-w-5xl mx-auto py-24;
@@ -123,7 +124,7 @@ const { project } = Astro.props;
   }
 
   .project-detail__info p {
-    @apply text-gray-800 leading-relaxed mb-9;
+    @apply text-gray-800 leading-relaxed mb-9 dark:text-white;
   }
 
   .project-detail__tags {
@@ -131,7 +132,7 @@ const { project } = Astro.props;
   }
 
   .tag {
-    @apply cursor-pointer transition-all duration-300 flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-indigo-500;
+    @apply cursor-pointer transition-all duration-300 flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-indigo-500 dark:text-gray-300;
   }
 
   .project-detail__responsive {
@@ -143,7 +144,7 @@ const { project } = Astro.props;
   }
 
   .responsive-caption {
-    @apply text-sm text-gray-500;
+    @apply text-sm text-gray-500 dark:text-gray-200;
   }
 
   .project-detail__secondary-image {
