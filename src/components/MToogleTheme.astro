@@ -1,0 +1,81 @@
+---
+import { MoonIcon, SunIcon } from "@lucide/astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<button id="theme-toggle" aria-label="Cambiar tema" class={className}>
+  <MoonIcon id="moon-icon" class="toogle-icon" />
+  <SunIcon id="sun-icon" class="toogle-icon hidden" />
+</button>
+
+<script>
+  // Update icon visibility based on current theme
+  function updateThemeIcons() {
+    const theme = document.documentElement.getAttribute("data-theme");
+    const moonIcon = document.getElementById("moon-icon");
+    const sunIcon = document.getElementById("sun-icon");
+
+    if (theme === "dark") {
+      // In dark mode, show sun icon (to switch to light)
+      moonIcon?.classList.add("hidden");
+      sunIcon?.classList.remove("hidden");
+    } else {
+      // In light mode, show moon icon (to switch to dark)
+      moonIcon?.classList.remove("hidden");
+      sunIcon?.classList.add("hidden");
+    }
+  }
+
+  // Toggle between light and dark themes
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    // Update data-theme attribute
+    document.documentElement.setAttribute("data-theme", newTheme);
+
+    // Save to localStorage
+    localStorage.setItem("theme", newTheme);
+
+    // Update icons
+    updateThemeIcons();
+  }
+
+  // Initialize icons on page load
+  updateThemeIcons();
+
+  // Listen for clicks on theme toggle button
+  document
+    .getElementById("theme-toggle")
+    ?.addEventListener("click", toggleTheme);
+
+  // Optional: Listen for system preference changes
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      // Only apply if user hasn't manually set a preference
+      if (!localStorage.getItem("theme")) {
+        const newTheme = e.matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        updateThemeIcons();
+      }
+    });
+</script>
+
+<style>
+  @reference "tailwindcss";
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+  #theme-toggle {
+    @apply p-2.5 bg-indigo-100 rounded-full lg:bg-transparent lg:p-0 cursor-pointer transition-transform hover:text-indigo-500 hover:scale-110 border-0;
+  }
+
+  .toogle-icon {
+    @apply size-8 lg:size-5;
+  }
+</style>

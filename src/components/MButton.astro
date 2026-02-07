@@ -2,12 +2,16 @@
 interface Props {
   ghost?: boolean;
   id?: string;
+  class?: string;
 }
 
-const { ghost, id } = Astro.props;
+const { ghost, id, class: className } = Astro.props;
 ---
 
-<button id={id} class:list={["mbutton", { "mbutton--ghost": ghost }]}>
+<button
+  id={id}
+  class:list={["mbutton", { "mbutton--ghost": ghost }, className]}
+>
   <slot />
 </button>
 
