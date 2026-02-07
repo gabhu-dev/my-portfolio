@@ -67,11 +67,18 @@ const { project } = Astro.props;
               <p class="responsive-caption">Responsive View Mobile</p>
             </>
           ) : (
-            <img
-              class="project-detail__secondary-image"
-              src={project.responsiveImage.link.src}
-              alt=""
-            />
+            <>
+              {project.responsiveImage.title && (
+                <h3 class="project-detail__secondary-title">
+                  {project.responsiveImage.title}
+                </h3>
+              )}
+              <img
+                class="project-detail__secondary-image"
+                src={project.responsiveImage.link.src}
+                alt=""
+              />
+            </>
           )}
         </section>
       )
@@ -128,7 +135,7 @@ const { project } = Astro.props;
   }
 
   .project-detail__responsive {
-    @apply w-full flex flex-col items-center gap-4;
+    @apply w-full flex flex-col items-center gap-4 px-14 mt-24;
   }
 
   .project-detail__responsive-image {
@@ -141,5 +148,9 @@ const { project } = Astro.props;
 
   .project-detail__secondary-image {
     @apply w-full h-auto;
+  }
+
+  .project-detail__secondary-title {
+    @apply text-xl font-semibold mb-4 text-left;
   }
 </style>

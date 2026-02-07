@@ -23,6 +23,7 @@ export interface Project {
   description: string;
   tags: Tag[];
   responsiveImage: {
+    title?: string;
     link: ImageMetadata;
     responsive: boolean;
   };
@@ -78,12 +79,20 @@ export const PROJECTS_DATA: Project[] = [
     titlePage: "DENNKY",
     link: "https://dennky.com",
     image: ProjectDennky,
-    description: "Laboratorio de fluidos dieléctricos y lubricantes. Somos una empresa que realiza servicios de muestreo, análisis de fluidos dieléctricos y de aceites lubricantes.",
+    description: "<span class='font-semibold'>Dennky</span> es una plataforma web desarrollada para un laboratorio, enfocada en <span class='font-semibold'>gestionar reportes y servicios de análisis clínicos</span> de manera clara y accesible para los clientes.<br><br>Mi participación en el proyecto incluyó:<br><br>• 🎨 Diseño de interfaces adaptadas a los requerimientos del laboratorio y sus clientes, garantizando una experiencia visual moderna y funcional.<br>• 💻 Construcción del frontend, asegurando una navegación responsiva y una interacción fluida.<br>• 📊 Desarrollo de una <span class='font-semibold'>librería personalizada de gráficos de Duval</span>, que permite representar resultados de análisis de forma precisa y comprensible.<br>• ⚡ Implementación de actualizaciones en tiempo real, mejorando la comunicación y la eficiencia en la entrega de información.<br><br>El impacto logrado fue una plataforma que <span class='font-semibold'>optimiza la gestión de reportes, facilita la interpretación de resultados y mejora la interacción con los clientes</span>, consolidando la presencia digital del laboratorio 🚀.",
     tags: [
+      { icon: CodeIcon, label: "Vue 3" },
+      { icon: CodeIcon, label: "TS" },
+      { icon: CodeIcon, label: "Vite" },
+      { icon: CodeIcon, label: "Ant Design Vue" },
+      { icon: CodeIcon, label: "Socket.io" },
+      { icon: CodeIcon, label: "Axios" },
+      { icon: BrushIcon, label: "Sass" },
+      { icon: BrushIcon, label: "Desktop Design" },
       { icon: FigmaIcon, label: "Figma" },
-      { icon: PencilIcon, label: "Tailwind" },
     ],
     responsiveImage: {
+      title: "Gráficos de Duval",
       link: ProjectDennkyDuval,
     },
   },
