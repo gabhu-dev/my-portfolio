@@ -24,6 +24,7 @@ export interface Project {
   tags: Tag[];
   responsiveImage: {
     title?: string;
+    description?: string;
     link: ImageMetadata;
     responsive: boolean;
   };
@@ -73,7 +74,7 @@ export const PROJECTS_DATA: Project[] = [
       responsive: true,
     },
   },
-    {
+  {
     slug: "dennky",
     title: 'Dennky Web',
     titlePage: "DENNKY",
@@ -85,6 +86,7 @@ export const PROJECTS_DATA: Project[] = [
       { icon: CodeIcon, label: "TS" },
       { icon: CodeIcon, label: "Vite" },
       { icon: CodeIcon, label: "Ant Design Vue" },
+      { icon: CodeIcon, label: "Canvas" },
       { icon: CodeIcon, label: "Socket.io" },
       { icon: CodeIcon, label: "Axios" },
       { icon: BrushIcon, label: "Sass" },
@@ -93,7 +95,9 @@ export const PROJECTS_DATA: Project[] = [
     ],
     responsiveImage: {
       title: "Gráficos de Duval",
+      description: "Los gráficos son una herramienta esencial en la interpretación de análisis de gases disueltos en aceite para transformadores. Implementé una visualización interactiva que permite a los técnicos identificar fallas de manera rápida y precisa, donde <span class='font-semibold'>todos los gráficos fueron construidos en base a fórmulas matemáticas</span> para garantizar la exactitud de los resultados.",
       link: ProjectDennkyDuval,
+      responsive: false,
     },
   },
 ];
