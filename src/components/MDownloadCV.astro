@@ -1,0 +1,30 @@
+---
+import MButton from "./MButton.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<MButton ghost class:list={["btn-download-cv", className]}>
+  Descarga mi CV
+</MButton>
+
+<script>
+  function downloadCV() {
+    const link = document.createElement("a");
+    link.href = "/files/CV.pdf";
+    link.download = "CV-Gabriela.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Attach event listener to all instances of the button
+  const buttons = document.querySelectorAll(".btn-download-cv");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", downloadCV);
+  });
+</script>

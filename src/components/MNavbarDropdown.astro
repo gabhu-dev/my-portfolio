@@ -1,8 +1,8 @@
 ---
 import MNavItem from "./MNavItem.astro";
-import MSocialLinks from "./MSocialLinks.astro";
-import MButton from "./MButton.astro";
 import MToogleTheme from "./MToogleTheme.astro";
+import MDownloadCV from "./MDownloadCV.astro";
+import MSocialLinks from "./MSocialLinks.astro";
 ---
 
 <div class="dropdown">
@@ -14,9 +14,7 @@ import MToogleTheme from "./MToogleTheme.astro";
       <MNavItem href="#contact"> Contáctame </MNavItem>
     </div>
     <div class="dropdown__actions">
-      <MButton ghost id="button-download-cv" class="mb-8"
-        >Descarga mi CV</MButton
-      >
+      <MDownloadCV class="mb-8" />
       <MSocialLinks />
     </div>
   </div>
