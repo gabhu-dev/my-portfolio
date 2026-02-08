@@ -57,7 +57,7 @@ const { project } = Astro.props;
     </section>
 
     {
-      project.responsiveImage.link && (
+      project.responsiveImage?.link && (
         <section class="project-detail__responsive">
           {project.responsiveImage.responsive ? (
             <>

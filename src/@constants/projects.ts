@@ -7,6 +7,8 @@ import ProjectTickerResponsive from "../assets/images/proyect-ticker-responsive.
 import ProjectDennky from "../assets/images/proyect-dennky.png";
 import ProjectDennkyDuval from "../assets/images/proyect-dennky-2.png";
 
+import ProjectTodoApp from "../assets/images/proyect-todo-app.png";
+
 import { FigmaIcon, PencilIcon, CodeIcon, BrushIcon, PaletteIcon } from "@lucide/astro";
 
 export interface Tag {
@@ -22,7 +24,7 @@ export interface Project {
   image: ImageMetadata;
   description: string;
   tags: Tag[];
-  responsiveImage: {
+  responsiveImage?: {
     title?: string;
     description?: string;
     link: ImageMetadata;
@@ -99,5 +101,22 @@ export const PROJECTS_DATA: Project[] = [
       link: ProjectDennkyDuval,
       responsive: false,
     },
+  },
+  {
+    slug: "todo-list",
+    title: 'Todo List',
+    titlePage: "TODO List",
+    link: "https://todo-app-six-orcin-98.vercel.app/",
+    image: ProjectTodoApp,
+    description: "El objetivo principal de esta aplicación es proporcionar una herramienta intuitiva y rápida para que los usuarios puedan organizar sus tareas pendientes, mejorando su productividad personal mediante una interfaz limpia y funcional.<br><br>Funcionalidades principales:<br><br>• ✅ Gestión completa de tareas: Crear, editar, marcar como completadas y eliminar tareas.<br>• Organización por estados: Visualización de tareas organizadas por su estado actual.<br>• Drag and Drop: Reorganización intuitiva mediante la funcionalidad de arrastrar y soltar.<br>• 🔍 Filtrado avanzado: Buscador de tareas y filtros por tipos.<br><br>Además, el proyecto utiliza <span class='font-semibold'>MockAPI.io</span> para simular una API REST real, permitiendo operaciones CRUD de forma persistente 🚀.",
+    tags: [
+      { icon: CodeIcon, label: "Vue 3" },
+      { icon: CodeIcon, label: "Vite" },
+      { icon: CodeIcon, label: "TS" },
+      { icon: PaletteIcon, label: "Tailwind" },
+      { icon: CodeIcon, label: "Pinia" },
+      { icon: CodeIcon, label: "Axios" },
+      { icon: FigmaIcon, label: "Figma" },
+    ],
   },
 ];
