@@ -8,6 +8,8 @@ import ProjectDennky from "../assets/images/proyect-dennky.png";
 import ProjectDennkyDuval from "../assets/images/proyect-dennky-2.png";
 
 import ProjectTodoApp from "../assets/images/proyect-todo-app.png";
+import ProjectBooksScraper from "../assets/images/books-scraper.png";
+
 
 import { FigmaIcon, PencilIcon, CodeIcon, BrushIcon, PaletteIcon } from "@lucide/astro";
 
@@ -105,7 +107,7 @@ export const PROJECTS_DATA: Project[] = [
   {
     slug: "todo-list",
     title: 'Todo List',
-    titlePage: "TODO List",
+    titlePage: "Todo List",
     link: "https://todo-app-six-orcin-98.vercel.app/",
     image: ProjectTodoApp,
     description: "El objetivo principal de esta aplicación es proporcionar una herramienta intuitiva y rápida para que los usuarios puedan organizar sus tareas pendientes, mejorando su productividad personal mediante una interfaz limpia y funcional.<br><br>Funcionalidades principales:<br><br>• ✅ Gestión completa de tareas: Crear, editar, marcar como completadas y eliminar tareas.<br>• Organización por estados: Visualización de tareas organizadas por su estado actual.<br>• Drag and Drop: Reorganización intuitiva mediante la funcionalidad de arrastrar y soltar.<br>• 🔍 Filtrado avanzado: Buscador de tareas y filtros por tipos.<br><br>Además, el proyecto utiliza <span class='font-semibold'>MockAPI.io</span> para simular una API REST real, permitiendo operaciones CRUD de forma persistente 🚀.",
@@ -117,6 +119,23 @@ export const PROJECTS_DATA: Project[] = [
       { icon: CodeIcon, label: "Pinia" },
       { icon: CodeIcon, label: "Axios" },
       { icon: FigmaIcon, label: "Figma" },
+    ],
+  },
+  {
+    slug: "books-scraper",
+    title: "Books Scraper",
+    titlePage: "BOOKS SCRAPER",
+    link: "https://github.com/gabhu-dev/books-scraper",
+    image: ProjectBooksScraper,
+    description:
+      "Este proyecto es una <span class='font-semibold'>aplicación web desarrollada con Flask</span> que realiza scraping del sitio Books to Scrape, una plataforma diseñada específicamente para practicar técnicas de extracción de datos.<br><br>🚀 <span class='font-semibold'>De qué trata el proyecto</span><br><br>La aplicación permite explorar un catálogo de libros extraído directamente del sitio fuente. Los usuarios pueden navegar por categorías, buscar libros específicos por título y ver detalles individuales de cada obra, todo a través de una interfaz moderna y responsiva.<br><br>✨ <span class='font-semibold'>Funciones principales</span><br><br>• 🔍 <span class='font-semibold'>Scraping dinámico:</span> Extrae títulos, precios, ratings e imágenes directamente de la fuente.<br>• 🗂️ <span class='font-semibold'>Navegación por categorías:</span> Filtra el catálogo según las categorías disponibles en el sitio original.<br>• 🔎 <span class='font-semibold'>Búsqueda:</span> Permite buscar libros por palabras clave en el título.<br>• 📖 <span class='font-semibold'>Vista de detalles:</span> Información extendida de cada libro (descripción, disponibilidad, etc.).<br>• ⚡ <span class='font-semibold'>Sistema de caché:</span> Implementa una caché interna para evitar peticiones redundantes y mejorar la velocidad de carga.<br>• ⚙️ <span class='font-semibold'>Optimización de scraping:</span> El scraper está limitado a procesar las primeras 2 páginas para garantizar tiempos de respuesta rápidos y evitar bloqueos en despliegues cloud.",
+    tags: [
+      { icon: CodeIcon, label: "Flask" },
+      { icon: CodeIcon, label: "Python" },
+      { icon: CodeIcon, label: "BeautifulSoup4" },
+      { icon: PaletteIcon, label: "Tailwind" },
+      { icon: CodeIcon, label: "Jinja2" },
+      { icon: CodeIcon, label: "Requests" },
     ],
   },
 ];
